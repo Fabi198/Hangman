@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/dlTwoPlayersSet"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <ImageView
+        android:layout_width="30dp"
+        app:layout_constraintStart_toEndOf="@id/tvInputPhrasePlayer1"
+        app:layout_constraintTop_toTopOf="@id/tvInputPhrasePlayer1"
+        app:layout_constraintBottom_toBottomOf="@id/tvInputPhrasePlayer1"
+        android:layout_marginEnd="4dp"
+        android:id="@+id/btnRollDice"
+        android:contentDescription="@string/frase_aleatoria"
+        android:src="@drawable/hangman_dice_logo"
+        android:layout_height="30dp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_width="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/tvInputPhrasePlayer1"
+        android:layout_marginTop="180dp"
+        android:imeOptions="actionDone"
+        app:boxBackgroundMode="outline"
+        app:boxBackgroundColor="@color/transparent"
+        app:counterMaxLength="20"
+        app:counterTextColor="@color/black"
+        app:counterEnabled="true"
+        android:hint="@string/jugador_1_escriba_la_frase_a_adivinar_por_jugador_2"
+        app:hintTextColor="@color/black"
+        android:textColorHint="@color/black"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:id="@+id/tvEditPhrasePlayer1"
+            android:textColor="@color/black"
+            android:singleLine="true"
+            android:inputType="text"
+            android:fontFamily="@font/twilight_new_moon"
+            android:layout_height="match_parent"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_width="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvInputPhrasePlayer1"
+        android:id="@+id/tvInputPlayerName"
+        android:hint="@string/jugador_1_escribe_tu_nombre"
+        app:hintTextColor="@color/black"
+        android:imeOptions="actionDone"
+        android:textColorHint="@color/black"
+        app:boxBackgroundMode="outline"
+        app:boxBackgroundColor="@color/transparent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:id="@+id/tvEditPlayerName"
+            android:textColor="@color/black"
+            android:singleLine="true"
+            android:inputType="text"
+            android:fontFamily="@font/twilight_new_moon"
+            android:layout_height="match_parent"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvInputPlayerName"
+        android:layout_marginTop="8dp"
+        app:cardCornerRadius="10dp"
+        android:id="@+id/btnSetPhrase"
+        app:strokeWidth="1dp"
+        app:cardBackgroundColor="@color/transparent"
+        app:strokeColor="@color/black"
+        android:layout_marginEnd="40dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:fontFamily="@font/twilight_new_moon"
+            android:text="@string/listo"
+            android:layout_height="wrap_content"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/ivStep1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/hangman_step1"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/ivStep2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:contentDescription="@string/primera_vida_perdida"
+            android:src="@drawable/hangman_step2"/>
+
+        <ImageView
+            android:id="@+id/ivStep3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:contentDescription="@string/segunda_vida_perdida"
+            android:src="@drawable/hangman_step3"/>
+
+        <ImageView
+            android:id="@+id/ivStep4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:contentDescription="@string/tercera_vida_perdida"
+            android:src="@drawable/hangman_step4"/>
+
+        <ImageView
+            android:id="@+id/ivStep5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:contentDescription="@string/cuarta_vida_perdida"
+            android:src="@drawable/hangman_step5"/>
+
+        <ImageView
+            android:id="@+id/ivStep6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:contentDescription="@string/quinta_vida_perdida"
+            android:src="@drawable/hangman_step6"/>
+
+        <ImageView
+            android:id="@+id/ivStep7"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:contentDescription="@string/sexta_vida_perdida"
+            android:src="@drawable/hangman_step7"/>
+
+        <ImageView
+            android:id="@+id/ivFakeBack"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            tools:ignore="ContentDescription"
+            android:src="@drawable/hangman_fake_background"/>
+
+
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

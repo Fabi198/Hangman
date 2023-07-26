@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="180dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/menu_sign_new_player_on_game"
+            tools:ignore="ContentDescription,ImageContrastCheck" />
+
+        <TextView
+            android:id="@+id/tvPlayerOnGame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/twilight_new_moon"
+            android:maxWidth="130dp"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpUsage" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/gamePlayer1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/ivStep1Player1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/hangman_step1"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/ivStep2Player1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/primera_vida_perdida_jugador_1"
+                android:scaleType="fitXY"
+                android:src="@drawable/hangman_step2"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:id="@+id/ivStep3Player1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/segunda_vida_perdida_jugador_1"
+                android:scaleType="fitXY"
+                android:src="@drawable/hangman_step3"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:id="@+id/ivStep4Player1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/tercera_vida_perdida_jugador_1"
+                android:scaleType="fitXY"
+                android:src="@drawable/hangman_step4"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:id="@+id/ivStep5Player1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/cuarta_vida_perdida_jugador_1"
+                android:scaleType="fitXY"
+                android:src="@drawable/hangman_step5"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:id="@+id/ivStep6Player1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/quinta_vida_perdida_jugador_1"
+                android:scaleType="fitXY"
+                android:src="@drawable/hangman_step6"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:id="@+id/ivStep7Player1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/sexta_vida_perdida_jugador_1"
+                android:scaleType="fitXY"
+                android:src="@drawable/hangman_step7"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:id="@+id/ivFakeBackPlayer1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/hangman_fake_background"
+                tools:ignore="ContentDescription" />
+
+
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvWordPlayer1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="250dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:listitem="@layout/item_letter_spot" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvAlphabetPlayer1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:spanCount="9"
+            tools:listitem="@layout/item_letter_spot" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/gamePlayer2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/ivStep1Player2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/hangman_step1"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/ivStep2Player2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/primera_vida_perdida_jugador_2"
+                android:scaleType="fitXY"
+                android:src="@drawable/hangman_step2"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:id="@+id/ivStep3Player2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/segunda_vida_perdida_jugador_2"
+                android:scaleType="fitXY"
+                android:src="@drawable/hangman_step3"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:id="@+id/ivStep4Player2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/tercera_vida_perdida_jugador_2"
+                android:scaleType="fitXY"
+                android:src="@drawable/hangman_step4"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:id="@+id/ivStep5Player2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/cuarta_vida_perdida_jugador_2"
+                android:scaleType="fitXY"
+                android:src="@drawable/hangman_step5"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:id="@+id/ivStep6Player2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/quinta_vida_perdida_jugador_2"
+                android:scaleType="fitXY"
+                android:src="@drawable/hangman_step6"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:id="@+id/ivStep7Player2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/sexta_vida_perdida_jugador_2"
+                android:scaleType="fitXY"
+                android:src="@drawable/hangman_step7"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:id="@+id/ivFakeBackPlayer2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/hangman_fake_background"
+                tools:ignore="ContentDescription" />
+
+
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvWordPlayer2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="250dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:listitem="@layout/item_letter_spot" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvAlphabetPlayer2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:spanCount="9"
+            tools:listitem="@layout/item_letter_spot" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:id="@+id/ivChangePlayer"
+        android:visibility="gone"
+        android:src="@drawable/hangman_change_player_sign"
+        tools:ignore="ContentDescription" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
