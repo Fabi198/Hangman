@@ -1,7 +1,11 @@
 package com.example.hangman
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.View
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
@@ -22,32 +26,53 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.ivOnePlayer.setOnClickListener {
-            val bundle = Bundle()
-            bundle.putInt("idContainer", binding.fragmentContainer.id)
-            val fragment = OnePlayerGame()
-            fragment.arguments = bundle
-            supportFragmentManager
-                .beginTransaction()
-                .replace(binding.fragmentContainer.id, fragment, "OnePlayerGame")
-                .addToBackStack("OnePlayerGame")
-                .commit()
-            allGone()
-            binding.fragmentContainer.visibility = View.VISIBLE
+            val anim: Animation = AnimationUtils.loadAnimation(this, R.anim.on_click_button)
+            anim.setAnimationListener(object: Animation.AnimationListener {
+                override fun onAnimationStart(animation: Animation?) {}
+                override fun onAnimationEnd(animation: Animation?) {
+                    val handler = Handler(Looper.getMainLooper())
+                    handler.postDelayed({
+                        val bundle = Bundle()
+                        bundle.putInt("idContainer", binding.fragmentContainer.id)
+                        val fragment = OnePlayerGame()
+                        fragment.arguments = bundle
+                        supportFragmentManager
+                            .beginTransaction()
+                            .replace(binding.fragmentContainer.id, fragment, "OnePlayerGame")
+                            .addToBackStack("OnePlayerGame")
+                            .commit()
+                        allGone()
+                        binding.fragmentContainer.visibility = View.VISIBLE
+                    }, 30)
+                }
+                override fun onAnimationRepeat(animation: Animation?) {}
+            })
+            binding.ivOnePlayer.startAnimation(anim)
         }
 
         binding.ivTwoPlayer.setOnClickListener {
-            val bundle = Bundle()
-            bundle.putInt("idContainer", binding.fragmentContainer.id)
-            val fragment = TwoPlayersSet()
-            fragment.arguments = bundle
-            supportFragmentManager
-            .beginTransaction()
-            .replace(binding.fragmentContainer.id, fragment, "TwoPlayersSet")
-            .addToBackStack("TwoPlayersSet")
-            .commit()
-            allGone()
-            binding.fragmentContainer.visibility = View.VISIBLE
-
+            val anim: Animation = AnimationUtils.loadAnimation(this, R.anim.on_click_button)
+            anim.setAnimationListener(object: Animation.AnimationListener {
+                override fun onAnimationStart(animation: Animation?) {}
+                override fun onAnimationEnd(animation: Animation?) {
+                    val handler = Handler(Looper.getMainLooper())
+                    handler.postDelayed({
+                        val bundle = Bundle()
+                        bundle.putInt("idContainer", binding.fragmentContainer.id)
+                        val fragment = TwoPlayersSet()
+                        fragment.arguments = bundle
+                        supportFragmentManager
+                            .beginTransaction()
+                            .replace(binding.fragmentContainer.id, fragment, "TwoPlayersSet")
+                            .addToBackStack("TwoPlayersSet")
+                            .commit()
+                        allGone()
+                        binding.fragmentContainer.visibility = View.VISIBLE
+                    }, 30)
+                }
+                override fun onAnimationRepeat(animation: Animation?) {}
+            })
+            binding.ivTwoPlayer.startAnimation(anim)
         }
 
     }
