@@ -7,6 +7,19 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/ivTitle"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:src="@drawable/hangman_title_without_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription,ImageContrastCheck" />
+
 
     <ImageView
         android:layout_width="30dp"
@@ -23,11 +36,11 @@
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
         android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clOneTurnPerPlayer"
         android:id="@+id/tvInputPhrasePlayer1"
-        android:layout_marginTop="180dp"
         android:imeOptions="actionDone"
         app:boxBackgroundMode="outline"
         app:boxBackgroundColor="@color/transparent"
@@ -40,13 +53,14 @@
         android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
             android:id="@+id/tvEditPhrasePlayer1"
-            android:textColor="@color/black"
-            android:singleLine="true"
-            android:inputType="text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:fontFamily="@font/twilight_new_moon"
-            android:layout_height="match_parent"/>
+            android:inputType="text"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            tools:ignore="TextContrastCheck,VisualLintTextFieldSize" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -67,13 +81,14 @@
         android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
             android:id="@+id/tvEditPlayerName"
-            android:textColor="@color/black"
-            android:singleLine="true"
-            android:inputType="text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:fontFamily="@font/twilight_new_moon"
-            android:layout_height="match_parent"/>
+            android:inputType="text"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            tools:ignore="TextContrastCheck,VisualLintTextFieldSize" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -106,76 +121,75 @@
 
     </com.google.android.material.card.MaterialCardView>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="150dp"
+        app:layout_constraintEnd_toStartOf="@id/clOneTurnPerPlayer"
+        app:layout_constraintStart_toStartOf="@id/tvInputPhrasePlayer1"
+        app:layout_constraintTop_toBottomOf="@id/ivTitle"
+        android:id="@+id/clKeepWhileWinningPlayer"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="10dp"
+        android:layout_height="60dp">
 
         <ImageView
-            android:id="@+id/ivStep1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="fitXY"
-            android:src="@drawable/hangman_step1"
-            tools:ignore="ContentDescription" />
-
-        <ImageView
-            android:id="@+id/ivStep2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="fitXY"
-            android:contentDescription="@string/primera_vida_perdida"
-            android:src="@drawable/hangman_step2"/>
-
-        <ImageView
-            android:id="@+id/ivStep3"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="fitXY"
-            android:contentDescription="@string/segunda_vida_perdida"
-            android:src="@drawable/hangman_step3"/>
-
-        <ImageView
-            android:id="@+id/ivStep4"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="fitXY"
-            android:contentDescription="@string/tercera_vida_perdida"
-            android:src="@drawable/hangman_step4"/>
-
-        <ImageView
-            android:id="@+id/ivStep5"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="fitXY"
-            android:contentDescription="@string/cuarta_vida_perdida"
-            android:src="@drawable/hangman_step5"/>
-
-        <ImageView
-            android:id="@+id/ivStep6"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="fitXY"
-            android:contentDescription="@string/quinta_vida_perdida"
-            android:src="@drawable/hangman_step6"/>
-
-        <ImageView
-            android:id="@+id/ivStep7"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="fitXY"
-            android:contentDescription="@string/sexta_vida_perdida"
-            android:src="@drawable/hangman_step7"/>
-
-        <ImageView
-            android:id="@+id/ivFakeBack"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="fitXY"
             tools:ignore="ContentDescription"
-            android:src="@drawable/hangman_fake_background"/>
+            android:scaleType="fitXY"
+            android:src="@drawable/menu_sign_new"
+            android:layout_height="match_parent"/>
+
+        <CheckBox
+            android:id="@+id/cbKeepWhileWinningPlayer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/twilight_new_moon"
+            android:text="@string/sigue_mientras_aciertes"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpUsage,TextSizeCheck" />
 
 
-    </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="150dp"
+        app:layout_constraintEnd_toEndOf="@id/tvInputPhrasePlayer1"
+        app:layout_constraintStart_toEndOf="@id/clKeepWhileWinningPlayer"
+        app:layout_constraintTop_toBottomOf="@id/ivTitle"
+        android:id="@+id/clOneTurnPerPlayer"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="10dp"
+        android:layout_height="60dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            tools:ignore="ContentDescription"
+            android:scaleType="fitXY"
+            android:src="@drawable/menu_sign_new"
+            android:layout_height="match_parent"/>
+
+        <CheckBox
+            android:id="@+id/cbOneTurnPerPlayer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/twilight_new_moon"
+            android:text="@string/un_turno_por_jugador"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpUsage,TextSizeCheck" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

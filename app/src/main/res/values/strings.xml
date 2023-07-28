@@ -47,4 +47,9 @@
     <string name="turno_jugador_2">Turno Jugador 2</string>
     <string name="turno_jugador_1">Turno Jugador 1</string>
     <string name="letra_incorrecta">LETRA INCORRECTA</string>
+    <string name="one_turn_per_player">OneTurnPerPlayer</string>
+    <string name="keep_while_winning_player">KeepWhileWinningPlayer</string>
+    <string name="debes_elegir_un_metodo_de_juego">Debes elegir un metodo de juego</string>
+    <string name="sigue_mientras_aciertes">Sigue mientras aciertes</string>
+    <string name="un_turno_por_jugador">Un turno por jugador</string>
 </resources>

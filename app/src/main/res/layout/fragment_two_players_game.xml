@@ -6,6 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="30dp"
+        android:id="@+id/ivTitle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="ContentDescription"
+        android:src="@drawable/hangman_title_without_background"
+        android:layout_height="110dp"/>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="150dp"
         android:layout_height="60dp"
@@ -260,7 +273,6 @@
         android:scaleType="fitXY"
         android:id="@+id/ivChangePlayer"
         android:visibility="gone"
-        android:src="@drawable/hangman_change_player_sign"
         tools:ignore="ContentDescription" />
 
 
