@@ -78,12 +78,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun allGone() {
+        binding.ivTitle.visibility = View.GONE
         binding.ivOnePlayer.visibility = View.GONE
         binding.ivTwoPlayer.visibility = View.GONE
         binding.ivCompleteBody.visibility = View.GONE
     }
 
     private fun allVisible() {
+        binding.ivTitle.visibility = View.VISIBLE
         binding.ivOnePlayer.visibility = View.VISIBLE
         binding.ivTwoPlayer.visibility = View.VISIBLE
         binding.ivCompleteBody.visibility = View.VISIBLE
