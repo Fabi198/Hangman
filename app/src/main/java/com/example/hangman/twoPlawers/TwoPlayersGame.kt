@@ -229,9 +229,9 @@ class TwoPlayersGame : Fragment(R.layout.fragment_two_players_game) {
         val namePlayer2 = arguments?.getString("namePlayer2")
         val namePlayer1 = arguments?.getString("namePlayer1")
         if (answer) {
-            binding.ivChangePlayer.setImageResource(R.drawable.hangman_change_player_sign_one_turn)
+            binding.ivChangePlayer.setImageResource(R.drawable.hangman_change_player_sign_correct_answer)
         } else {
-            binding.ivChangePlayer.setImageResource(R.drawable.hangman_change_player_sign)
+            binding.ivChangePlayer.setImageResource(R.drawable.hangman_change_player_sign_incorrect_answer)
         }
         if (currentPlayer == 1) {
             binding.gamePlayer1.isClickable = false
