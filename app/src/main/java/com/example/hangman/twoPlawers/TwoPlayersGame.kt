@@ -10,10 +10,10 @@ import android.widget.ImageView
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.example.hangman.Alphabet.alphabetTyped
-import com.example.hangman.Alphabet.completeAlphabet
 import com.example.hangman.LayoutManagerConverter.setCustomLayoutManager
 import com.example.hangman.MainActivity
 import com.example.hangman.R
+import com.example.hangman.Striker.getStrikes
 import com.example.hangman.adapters.AlphabetAdapter
 import com.example.hangman.adapters.WordAdapter
 import com.example.hangman.databinding.FragmentTwoPlayersGameBinding
@@ -74,15 +74,7 @@ class TwoPlayersGame : Fragment(R.layout.fragment_two_players_game) {
             val alphabet = ArrayList<Letter>()
             alphabetTyped.forEach { alphabet.add(Letter(it)) }
             val alphabetAdapter = AlphabetAdapter(alphabet) { alphabetPosition ->
-                var strike = 0
-                arrayList.forEach {
-                    completeAlphabet[alphabetPosition].letters.forEach { alphabetLetter ->
-                        if (alphabetLetter.letter == it.letter) {
-                            it.guessed = true
-                            strike++
-                        }
-                    }
-                }
+                val strike = getStrikes(arrayList, alphabetPosition)
                 if (strike == 0) {
                     lostLife(arrayPlayer1[conPlayer1], arrayList, adapter)
                 } else if (strike > 0) {
@@ -117,15 +109,7 @@ class TwoPlayersGame : Fragment(R.layout.fragment_two_players_game) {
             val alphabet = ArrayList<Letter>()
             alphabetTyped.forEach { alphabet.add(Letter(it)) }
             val alphabetAdapter = AlphabetAdapter(alphabet) { alphabetPosition ->
-                var strike = 0
-                arrayList.forEach {
-                    completeAlphabet[alphabetPosition].letters.forEach { alphabetLetter ->
-                        if (alphabetLetter.letter == it.letter) {
-                            it.guessed = true
-                            strike++
-                        }
-                    }
-                }
+                val strike = getStrikes(arrayList, alphabetPosition)
                 if (strike == 0) {
                     lostLife(arrayPlayer2[conPlayer2], arrayList, adapter)
                 } else if (strike > 0) {
