@@ -24,7 +24,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         binding.ivOnePlayer.setOnClickListener {
             val anim: Animation = AnimationUtils.loadAnimation(this, R.anim.on_click_button)
             anim.setAnimationListener(object: Animation.AnimationListener {
