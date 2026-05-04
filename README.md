@@ -2,7 +2,7 @@
   <div style="display: inline-flex; align-items: center; gap: 10px;">
     <img src="https://raw.githubusercontent.com/Fabi198/fabi198.github.io/main/assets/hangman/logo_main.webp"
          width="60" />
-    <h1 style="margin: 0;">Hangman App</h1>
+    <h1 style="margin: 0;">Hangman</h1>
   </div>
 </div>
 
